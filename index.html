@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Details</title>
+</head>
+<body style="text-align:center; margin-top:100px; font-family:Arial;">
+
+    <h2>Enter Your Details</h2>
+
+    <input type="text" id="name" placeholder="Enter your name"><br><br>
+    <input type="date" id="dob"><br><br>
+
+    <button onclick="goToNextPage()">Submit</button>
+
+    <script>
+        function goToNextPage() {
+            let name = document.getElementById("name").value;
+            let dob = document.getElementById("dob").value;
+
+            if(name === "" || dob === "") {
+                alert("Please fill all details!");
+                return;
+            }
+
+            localStorage.setItem("userName", name);
+            localStorage.setItem("userDOB", dob);
+
+            window.location.href = "greeting.html";
+        }
+    </script>
+
+</body>
+</html>
